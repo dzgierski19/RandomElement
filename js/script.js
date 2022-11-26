@@ -6,7 +6,7 @@
 
 
 
-// Jakie są inne rozwiązania Math.floor, Math.round, Math.ceil
+// Jakie są inne rozwiązania Math.floor, Math.round, Math.ceil -> math.round
 // typeof
 // wywołać pustą tablicę, a potem dodać do validacji, żeby tablica nie była pusta
 
@@ -19,16 +19,14 @@ const merged = [...exampleArray, ...superDuperArray, ...superDuperDuperArray]
 
 console.log(merged)
 
-function selectSomething(array, myString, itd,){
-
-}
 
 const selectRandomEle = (array1)  => {
     //TODO zrobić validacje
     return array1[Math.round(Math.random()*array1.length)]; // flor zwraca wartości z przedziału "<0;1)"
 }
 
-console.log("emptyArray",selectRandomEle(emptyArray))
-console.log("exampleArray",selectRandomEle(exampleArray))
+console.log("emptyArray", selectRandomEle(emptyArray), typeof selectRandomEle(emptyArray))
+console.log("exampleArray",selectRandomEle(exampleArray), typeof selectRandomEle(exampleArray))
+console.log("superDuperDuperArray",selectRandomEle(superDuperDuperArray), typeof selectRandomEle(superDuperDuperArray))
 console.log("Lubie placki",selectRandomEle("Lubie placki"))
 
