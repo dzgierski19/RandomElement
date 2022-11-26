@@ -30,3 +30,16 @@ console.log("exampleArray",selectRandomEle(exampleArray), typeof selectRandomEle
 console.log("superDuperDuperArray",selectRandomEle(superDuperDuperArray), typeof selectRandomEle(superDuperDuperArray))
 console.log("Lubie placki",selectRandomEle("Lubie placki"))
 
+const validateArray = (array1) => {
+  if(array1.elements[].length == 0)
+  {
+    alert("Enter Value");  
+    return false;
+  } else
+  return true;
+}
+
+console.log ('emptyArray', validateArray(emptyArray))
+
+
+
