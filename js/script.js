@@ -3,9 +3,6 @@
 // 2. Instaluje npm : zgoogluj
 // 3. każde zadanie to oddzielny plik
 
-
-
-
 // Jakie są inne rozwiązania Math.floor, Math.round, Math.ceil -> math.round
 // typeof
 // wywołać pustą tablicę, a potem dodać do validacji, żeby tablica nie była pusta
@@ -19,27 +16,43 @@ const merged = [...exampleArray, ...superDuperArray, ...superDuperDuperArray]
 
 console.log(merged)
 
+const validateIfArray = (array1) => {
+  if(!Array.isArray(array1)){
+    throw new Error("Must be an array")
+  }
+}
+
+const validateIsNotEmptyArray = (array1) => {
+  // tu sprawdzić, czy coś nie jest arrayem
+  validateIfArray(array1)
+  if(array1.length !== 0){ 
+    // alert("Enter Value");  
+    throw new Error("Must not be an empty array")
+  }
+}
 
 const selectRandomEle = (array1)  => {
     //TODO zrobić validacje
+    validateIsNotEmptyArray(array1)
     return array1[Math.round(Math.random()*array1.length)]; // flor zwraca wartości z przedziału "<0;1)"
 }
 
-console.log("emptyArray", selectRandomEle(emptyArray), typeof selectRandomEle(emptyArray))
-console.log("exampleArray",selectRandomEle(exampleArray), typeof selectRandomEle(exampleArray))
+
+
+// console.log("emptyArray", selectRandomEle(emptyArray), typeof selectRandomEle(emptyArray))
+const result = selectRandomEle(exampleArray)
+console.log("exampleArray",result, typeof result)
 console.log("superDuperDuperArray",selectRandomEle(superDuperDuperArray), typeof selectRandomEle(superDuperDuperArray))
 console.log("Lubie placki",selectRandomEle("Lubie placki"))
 
-const validateArray = (array1) => {
-  if(array1.elements[].length == 0)
-  {
-    alert("Enter Value");  
-    return false;
-  } else
-  return true;
+const throwIfNotString = (mystring) => {
+  if(typeof mystring !== "string"){
+    throw new Error("Variable must be a string")
+  }
 }
 
-console.log ('emptyArray', validateArray(emptyArray))
+// console.log ('emptyArrayValidation', validateIsNotEmptyArray(emptyArray))
 
+//hostisting poczytah
 
-
+//petla, instrukcja warunkowa
